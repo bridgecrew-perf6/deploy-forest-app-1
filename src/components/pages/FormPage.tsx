@@ -17,7 +17,7 @@ import { addCalculationResult } from '../../redux/CalculationResultSlice';
 import './FormPage.css';
 import { FormValues } from '../../models/FormValues';
 import formInformation from '../../data/FormInformation';
-// import testFormData from '../../data/testFormData.json';
+import testFormData from '../../data/testFormData.json';
 import schema from './Validation';
 
 const FormPage: VFC = () => {
@@ -146,10 +146,7 @@ const FormPage: VFC = () => {
 
     // ※高知大学のWi-Fiを利用しないと必ずエラーになる(セキュリティの関係上)
     void axios
-      .post<CalculationResultType>(
-        'http://133.97.178.97:21312/calculation/',
-        submitApiData,
-      )
+      .post<CalculationResultType>('calculation/', submitApiData)
       .then((res) => {
         dispatch(
           // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
@@ -159,12 +156,12 @@ const FormPage: VFC = () => {
       })
       .catch(() => {
         // eslint-disable-next-line no-alert
-        alert('計算に失敗しました。管理者に連絡をしてください');
+        // alert('計算に失敗しました。管理者に連絡をしてください');
         // 以下はテストように開発
         // eslint-disable-next-line no-alert
         // alert('計算に失敗しました。これより、デモの計算結果ページに遷移します');
-        // dispatch(addCalculationResult(testFormData));
-        // navigate('/submit');
+        dispatch(addCalculationResult(testFormData));
+        navigate('/submit');
       })
       .finally(() => {
         setLoading(false);
