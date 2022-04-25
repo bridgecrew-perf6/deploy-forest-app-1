@@ -5,7 +5,7 @@ const app = express();
 //ミドルウエアでstaticパスを追加（ただ、これだけだと直アクセスや無いpathだと動かない）
 app.use(express.static(path.join(__dirname, '..', 'build')));
 
-//これを追加（全てをindex.htmlにリダイレクト。いわゆるrewrite設定）
+//これを追加（全てをindex.htmlにリダイレクト。いわゆるrewrite設定）va
 app.use((req, res, next) => {
   res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
 });
