@@ -2,13 +2,11 @@
   "name": "forest-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "./",
   "dependencies": {
-    "@emotion/react": "^11.8.2",
-    "@emotion/styled": "^11.8.1",
-    "@hookform/resolvers": "^2.8.2",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
     "@matejmazur/react-katex": "^3.1.3",
-    "@mui/material": "^5.5.1",
+    "@mui/material": "^5.4.1",
     "@reduxjs/toolkit": "^1.8.0",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
@@ -29,7 +27,6 @@
     "katex": "0.13.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-hook-form": "^7.17.4",
     "react-icons": "^4.3.1",
     "react-katex": "^2.0.2",
     "react-redux": "^7.2.6",
@@ -38,11 +35,9 @@
     "react-scripts": "4.0.3",
     "redux": "^4.1.2",
     "typescript": "^4.5.5",
-    "web-vitals": "^2.1.4",
-    "yup": "^0.32.11"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
-      "setup": "yarn",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -58,9 +53,6 @@
     "lint:style:fix": "stylelint --fix 'src/**/*.{css,less,sass,scss}'",
     "preinstall": "typesync || :",
     "prepare": "simple-git-hooks > /dev/null"
-  },
-  "engines": {
-    "node": "14.17.0",
   },
   "eslintConfig": {
     "extends": [
@@ -101,10 +93,6 @@
     "stylelint-config-standard": "^25.0.0",
     "stylelint-config-standard-scss": "^3.0.0",
     "stylelint-order": "^5.0.0"
-  },
-  "simple-git-hooks": {
-    "pre-commit": ". ./lint-staged-around",
-    "pre-push": ". ./test-around"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
